@@ -1,0 +1,158 @@
+<html>
+   <head> 
+       <script>
+let playerScore = 0;
+let computerScore = 0;
+const computerSelection = computerPlay();
+const playerSelection = userPlay();
+const gameWinner = getWinner();        
+
+// User plays
+function userPlay (){
+            let playerSelection = prompt("rock, paper, or scissors?");
+            return (playerSelection)
+        }
+
+// Computer plays
+function computerPlay(){
+           let computerSelection = Math.floor(Math.random() *3);
+           if (computerSelection >= 2){
+               return "rock";
+           }
+           else if (computerSelection >= 1){
+               return "paper";
+           }
+           else return "scissors";
+       }
+// Scores 
+function win(playerSelection, computerSelection){
+    playerScore++
+    computerScore
+    console.log("You won, " + playerSelection + " beats " + computerSelection)
+    console.log(playerScore)
+    console.log("Player wins: " + playerScore +  " And Computer wins: " + computerScore)
+
+}
+
+function lost(playerSelection, computerSelection){
+    playerScore
+    computerScore++
+    console.log("You lost, " + computerSelection + " beats " + playerSelection)
+    console.log(computerScore)
+    console.log("Player wins: " + playerScore +  " And Computer wins: " + computerScore)
+
+}
+
+function draw(playerSelection, computerSelection){
+    computerScore++;
+    playerScore++, 
+    console.log("You drew, " + computerSelection + " same as " + playerSelection)
+    console.log(computerScore, playerScore)
+    console.log("Player wins: " + playerScore +  " And Computer wins: " + computerScore)
+
+    }
+// computer vs player
+function playRound(playerSelection, computerSelection) {
+	if (playerSelection === 'rock' && computerSelection === 'scissors' ||
+        playerSelection === 'paper' && computerSelection === 'rock' ||
+        playerSelection === 'scissors' && computerSelection === 'paper') {
+
+      win(playerSelection, computerSelection);
+        } 
+        else if (computerSelection === 'rock' && playerSelection === 'scissors' ||
+      computerSelection === 'paper' && playerSelection === 'rock' ||
+      computerSelection === 'scissors' && playerSelection === 'paper') {
+     lost(playerSelection, computerSelection);
+       } 
+     else if(computerSelection === playerSelection) {
+     draw(playerSelection, computerSelection);
+  }
+}
+
+// Anouncing winner
+
+function getWinner(playerScore, computerScore) {
+    let gameWinner = "none";
+    if (playerScore >= 3 || computerScore < 5 ) {
+            gameWinner = "Player";
+        } else if (computerScore >= 3 || playerScore < 5) {
+            gameWinner = "Tie"
+        }
+    else  {
+        gameWinner = "No Winner";
+    }
+}
+
+//Playing 5 times
+
+function game(){
+    
+    console.log(playRound(userPlay(playerSelection), computerPlay(computerSelection)))
+    getWinner(playerScore, computerScore);
+    console.log(playRound(userPlay(playerSelection), computerPlay(computerSelection)))
+    getWinner(playerScore, computerScore);
+    console.log(playRound(userPlay(playerSelection), computerPlay(computerSelection)))
+    getWinner(playerScore, computerScore);
+    console.log(playRound(userPlay(playerSelection), computerPlay(computerSelection)))
+    getWinner(playerScore, computerScore);
+    console.log(playRound(userPlay(playerSelection), computerPlay(computerSelection)))
+   
+    return getWinner(playerScore, computerScore)
+    }
+    console.log(game(getWinner(playerScore)))
+</script>
+   </head>
+   <title> ROCK PAPER SCISSORS</title>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
